@@ -3,9 +3,9 @@
 @import 'nib'
 
 $font-family = Helvetica
-$header-background-color = #90425c
-$masthead-background-color = #3a859f
-$background-color = #86988b
+$header-background-color = #006699
+$masthead-background-color = #009966
+$background-color = #cc9900
 
 $body-color = #fff
 $text-color = #000
@@ -56,12 +56,12 @@ header
       color: $hover-color
 
   h2
-    color: #245060
+    color: $body-color
     font-weight: 100
     font-size: 28px
     padding: 20px 0 10px
-    border-top: 2px solid #42a0ba
-    box-shadow: 0 -2px #276475
+    border-top: 2px solid $body-color
+    box-shadow: 0 -2px $header-background-color
     margin: 10px auto
 
     a
@@ -75,8 +75,7 @@ header
   position: relative
   z-index: 2
   padding: 30px 0
-  background: url("../img/stripped-bg.png")
-  box-shadow: 0px -10px 2px 0px rgba(0, 0, 0, 0.2), inset 0px 2px $box-shadow
+  box-shadow: inset 0px 2px $box-shadow
 
   .info-bullet
     text-align: center
@@ -89,7 +88,7 @@ header
       text-shadow: 1px 1px $text-shadow
 
     h5
-      color: #3a859f
+      color: $body-color
       font-size: 22px
       text-transform: uppercase
       text-shadow: 1px 1px $text-shadow
