@@ -2,10 +2,12 @@ angular.module('app').controller('MainCtrl', function MainCtrl($scope, remoteSer
 	var main = this; // this == $scope because we use the controllerAs definition
 
 	main.serviceStatus = getServiceStatus;
+	main.serviceStatusValue = null;
 
 	function getServiceStatus(){
-		remoteService.getServiceStatus().success(function (response) {
+		remoteService.getServiceStatus().then(function (response) {
 			console.log(response);
+			main.sericeStatusValue = "Unknown";
         //Dig into the responde to get the relevant data
         //$scope.driversList = response.MRData.StandingsTable.StandingsLists[0].DriverStandings;
     });
@@ -15,7 +17,7 @@ angular.module('app').controller('MainCtrl', function MainCtrl($scope, remoteSer
 		// 	status: true
 		// };
 	}
-
+	
 	main.greet = greet;
 
 	main.test = function(){
