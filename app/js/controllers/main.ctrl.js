@@ -4,7 +4,7 @@ angular.module('app').controller('MainCtrl', function MainCtrl($scope, remoteSer
 	main.serviceStatus = getServiceStatus;
 
 	function getServiceStatus(){
-		app.remoteService.getServiceStatus().success(function (response) {
+		remoteService.getServiceStatus().success(function (response) {
 			console.log(response);
         //Dig into the responde to get the relevant data
         //$scope.driversList = response.MRData.StandingsTable.StandingsLists[0].DriverStandings;
