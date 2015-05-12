@@ -1,5 +1,20 @@
-angular.module('app').controller('MainCtrl', function MainCtrl($scope, $http) {
+angular.module('app').controller('MainCtrl', function MainCtrl($scope, remoteService) {
 	var main = this; // this == $scope because we use the controllerAs definition
+
+	main.serviceStatus = getServiceStatus;
+
+	function getServiceStatus(){
+		app.remoteService.getServiceStatus().success(function (response) {
+			console.log(response);
+        //Dig into the responde to get the relevant data
+        //$scope.driversList = response.MRData.StandingsTable.StandingsLists[0].DriverStandings;
+    });
+		// return {
+		// 	message: "Welcome to F4 Fake API",
+		// 	version: 1,
+		// 	status: true
+		// };
+	}
 
 	main.greet = greet;
 
