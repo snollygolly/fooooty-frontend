@@ -1,23 +1,18 @@
 angular.module('app').controller('MainCtrl', function MainCtrl($scope, remoteService) {
 	var main = this; // this == $scope because we use the controllerAs definition
 
-	main.serviceStatus = getServiceStatus;
 	main.serviceStatusValue = null;
 
-	function getServiceStatus(){
-		remoteService.getServiceStatus().then(function (response) {
-			console.log(response);
-			main.sericeStatusValue = "Unknown";
-        //Dig into the responde to get the relevant data
-        //$scope.driversList = response.MRData.StandingsTable.StandingsLists[0].DriverStandings;
-    });
-		// return {
-		// 	message: "Welcome to F4 Fake API",
-		// 	version: 1,
-		// 	status: true
-		// };
-	}
-	
+	remoteService.getServiceStatus();
+
+	remoteService.getServiceStatus().then(function (response) {
+		main.serviceStatusValue = response.data.token;
+		console.log(response.data.token);
+		//main.sericeStatusValue = "Unknown";
+			//Dig into the responde to get the relevant data
+			//$scope.driversList = response.MRData.StandingsTable.StandingsLists[0].DriverStandings;
+	});
+
 	main.greet = greet;
 
 	main.test = function(){
