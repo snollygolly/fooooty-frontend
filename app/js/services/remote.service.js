@@ -1,5 +1,6 @@
 angular.module('app').factory('remoteService', function ($http) {
-	var remote = {};
+  var remote = {};
+  remote.url = 'http://private-b8b73-fooooty.apiary-mock.com';  // mock url. changed from http://127.0.0.1:4000
 
   remote.getServiceStatus = function() {
     console.log("service hit!");
@@ -10,7 +11,7 @@ angular.module('app').factory('remoteService', function ($http) {
 		// };
     return $http({
       method: 'POST',
-      url: 'http://127.0.0.1:4000/auth'
+      url: remote.url + '/auth'
     });
   }
 
