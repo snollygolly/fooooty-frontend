@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>health</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="player in players">
+            <td>{{player.last_name}}, {{player.first_name}}</td>
+            <td>{{player.age}}</td>
+            <td>{{player.health}}</td>
+        </tr>
+    </tbody>
+</table>

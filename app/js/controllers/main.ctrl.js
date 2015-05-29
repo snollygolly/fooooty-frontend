@@ -2,6 +2,7 @@ angular.module('app').controller('MainCtrl', function MainCtrl($scope, remoteSer
 	var main = this; // this == $scope because we use the controllerAs definition
 
 	main.serviceStatusValue = null;
+    main.allPlayers = [];
 
 	remoteService.getServiceStatus();
 
@@ -33,5 +34,18 @@ angular.module('app').controller('MainCtrl', function MainCtrl($scope, remoteSer
 	  // });
 		return "unknown";
 	};
+
+    main.refreshAllPlayerList = function(){
+        var DELAY = 5000;  // ms between refreshes
+
+        console.log('refreshing player list...');
+        remoteService.getAllPlayers().then(function (response){
+            main.allPlayers = response.data;
+            console.log(response.data);
+        });
+        setTimeout(main.refreshAllPlayerList, DELAY);
+    }
+    main.refreshAllPlayerList();
+
 
 });

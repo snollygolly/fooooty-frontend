@@ -15,5 +15,12 @@ angular.module('app').factory('remoteService', function ($http) {
     });
   }
 
+    remote.getAllPlayers = function() {
+        return $http({
+            method: 'GET',
+            url: remote.url + '/api/v1/players'
+        });
+    }
+
   return remote;
 });
