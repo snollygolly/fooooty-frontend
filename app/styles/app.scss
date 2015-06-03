@@ -2,4 +2,7 @@
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap"; // Boostrap 3
 @import "../../bower_components/ocModal/dist/scss/ocModal.light";
 
+/* fix bootstrap fonts which don't load properly from w/in bower dir */
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+
 @import "custom.scss";
