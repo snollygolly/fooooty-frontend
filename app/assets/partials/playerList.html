@@ -8,7 +8,7 @@
     </thead>
     <tbody>
         <tr ng-repeat="player in players">
-            <td><a href="/playerViewer/{{player.id}}"></a>{{player.last_name}}, {{player.first_name}}</td>
+            <td><a ui-sref="playerViewer({playerId: player.id})">{{player.last_name}}, {{player.first_name}}</a></td>
             <td>{{player.age}}</td>
             <td>{{player.health}}</td>
         </tr>

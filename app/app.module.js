@@ -16,11 +16,12 @@ angular.module('app', ['ngSanitize', 'ngResource', 'ui.router', 'oc.modal'])
 			}
 		})
         .state('playerViewer', {
-            url: "playerViewer/:playerId",
+            url: "/playerViewer/:playerId",
             views: {
-                allPlayerList:{
+                "mainView":{
                     templateUrl: "partials/playerViewer.html",
-                    controller: ""
+                    controller: "playerProfileCtrl",
+                    controllerAs: "playerProfileCtrl"
                 }
             }
         });
