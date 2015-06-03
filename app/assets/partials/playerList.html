@@ -4,6 +4,10 @@
             <th>name</th>
             <th>age</th>
             <th>health</th>
+            <th>level</th>
+            <th>club</th>
+            <th>nation</th>
+            <th>position</th>
         </tr>
     </thead>
     <tbody>
@@ -11,6 +15,10 @@
             <td><a ui-sref="playerViewer({playerId: player.id})">{{player.last_name}}, {{player.first_name}}</a></td>
             <td>{{player.age}}</td>
             <td>{{player.health}}</td>
+            <td>{{player.level}}</td>
+            <td>{{player.club_id}}</td>
+            <td>{{player.nation_id}}</td>
+            <td>{{player.position}}</td>
         </tr>
     </tbody>
 </table>
