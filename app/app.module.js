@@ -14,7 +14,16 @@ angular.module('app', ['ngSanitize', 'ngResource', 'ui.router', 'oc.modal'])
 					controllerAs: 'main'
 				}
 			}
-		});
+		})
+        .state('playerViewer', {
+            url: "playerViewer/:playerId",
+            views: {
+                allPlayerList:{
+                    templateUrl: "partials/playerViewer.html",
+                    controller: ""
+                }
+            }
+        });
 
 		// /!\ Without server side support html5 must be disabled.
 		return $locationProvider.html5Mode(true);

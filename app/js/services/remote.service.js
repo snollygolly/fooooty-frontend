@@ -22,5 +22,12 @@ angular.module('app').factory('remoteService', function ($http) {
         });
     }
 
+    remote.getPlayer = function(id){
+        return $http({
+            method: 'GET',
+            url: remote.url + '/api/v1/players/' + id
+        });
+    }
+
   return remote;
 });

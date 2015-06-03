@@ -1,4 +1,5 @@
 angular.module('app').controller('MainCtrl', function MainCtrl($scope, remoteService) {
+    // controller for the home/main view
 	var main = this; // this == $scope because we use the controllerAs definition
 
 	main.serviceStatusValue = null;
