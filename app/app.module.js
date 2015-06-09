@@ -21,6 +21,13 @@ angular.module('app', ['ngSanitize', 'ngResource', 'ui.router', 'oc.modal'])
                     templateUrl: "partials/rules.html"
                 }
             }
+        }).state('finances', {
+            url: '/finances',
+            views: {
+                "mainView":{
+                    templateUrl: "partials/finances.html"
+                }
+            }
         }).state('playerViewer', {
             url: "/playerViewer/:playerId",
             views: {
