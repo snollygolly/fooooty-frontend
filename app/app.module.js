@@ -14,7 +14,14 @@ angular.module('app', ['ngSanitize', 'ngResource', 'ui.router', 'oc.modal'])
 					controllerAs: 'main'
 				}
 			}
-		}).state('rules', {
+		}).state('your_club', {
+            url: "/your_club",
+            views: {
+                "mainView":{
+                    templateUrl: "partials/your_club.html"
+                }
+            }
+        }).state('rules', {
             url: "/rulebook",
             views: {
                 "mainView":{
